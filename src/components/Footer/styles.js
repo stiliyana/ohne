@@ -53,7 +53,6 @@ export default {
     extend: 'flexContainer',
     flex: 1,
     justifyContent: 'center',
-    minWidth: 375,
     [`@media(max-width: ${max}px)`]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -63,6 +62,7 @@ export default {
       }
     },
     [`@media(min-width: ${min}px)`]: {
+      minWidth: 375,
       '& > a': {
         margin: '0 30px'
       }
