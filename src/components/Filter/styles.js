@@ -36,6 +36,7 @@ export default {
   checkbox: {
     marginRight: 20,
     '-webkit-appearance': 'none',
+    backgroundColor: 'unset',
     cursor: 'pointer',
     width: 17,
     height: 17,

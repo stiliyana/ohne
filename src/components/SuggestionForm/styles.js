@@ -46,6 +46,7 @@ export default {
     alignSelf: 'flex-end',
     '-webkit-appearance': 'none',
     fontFamily: 'brandon-grotesque, sans-serif',
+    backgroundColor: 'unset',
     color: colors.wafer,
     fontSize: 24,
     fontWeight: 'bold',

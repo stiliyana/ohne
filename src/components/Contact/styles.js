@@ -53,6 +53,7 @@ export default {
   hide: {
     cursor: 'pointer',
     '-webkit-appearance': 'none',
+    backgroundColor: 'unset',
     border: 'none',
     fontFamily: 'brandon-grotesque, sans-serif',
     fontWeight: 'bold',

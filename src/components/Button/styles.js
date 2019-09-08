@@ -3,6 +3,7 @@ import colors from '../../utils/colors'
 export default {
   button: {
     '-webkit-appearance': 'none',
+    backgroundColor: 'unset',
     cursor: 'pointer',
     margin: '10px 25px',
     border: `2px solid ${colors.wafer}`,
