@@ -14,13 +14,6 @@ export default {
       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.5)',
       zIndex: 999,
       padding: '16px 30px 30px'
-    },
-    [`@media(max-width: ${max}px)`]: {
-      display: 'flex',
-      flexDirection: 'column',
-      marginBottom: 100,
-      flexGrow: 1,
-      justifyContent: 'space-between'
     }
   },
   checkboxContainer: {
@@ -66,7 +59,10 @@ export default {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    [`@media(max-width: ${max}px)`]: {
+      marginTop: 40
+    }
   },
   clearIcon: {
     marginRight: 20,
