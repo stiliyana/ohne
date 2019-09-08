@@ -15,7 +15,7 @@ export default {
     zIndex: 1
   },
   mobileNavLinks: {
-    margin: '90px 0',
+    margin: '90px 0 40px',
     display: 'flex',
     flexDirection: 'column'
   },

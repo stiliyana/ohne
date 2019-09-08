@@ -18,7 +18,7 @@ export default {
     [`@media(max-width: ${max}px)`]: {
       display: 'flex',
       flexDirection: 'column',
-      marginBottom: 34,
+      marginBottom: 100,
       flexGrow: 1,
       justifyContent: 'space-between'
     }
