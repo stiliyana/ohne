@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 import styles from './styles'
 
 const _SuggestionForm = ({ classes }) => (
-  <form action="https://formspree.io/stiliyana@door2door.io" method="POST" className={classes.form}>
+  <form action={`https://formspree.io/${REACT_APP_FORM_EMAIL}`} method="POST" className={classes.form}>
     <div className={classes.inputContainer}>
       <label className={classes.inputLabel} for="name">Name</label>
       <input className={classes.input} type="text" name="name" id="name" />
