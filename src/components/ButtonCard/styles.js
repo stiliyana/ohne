@@ -1,5 +1,3 @@
-import colors from '../../utils/colors'
-
 export default {
   button: {
     '-webkit-appearance': 'none',

@@ -1,5 +1,5 @@
 import colors from '../../utils/colors'
-import { min, max } from '../../utils/breakpoints'
+import { max } from '../../utils/breakpoints'
 
 export default {
   root: {
