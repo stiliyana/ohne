@@ -21,7 +21,7 @@ const VenueMarker = ({ info, index, onClick, classes }) => {
       longitude={info.longitude}
       latitude={info.latitude}
     >
-      <img src={icons[info.type]} alt="instagram" onClick={onClick} />
+      <img src={icons[info.type]} alt={info.type} onClick={onClick} />
     </Marker>
   )
 }

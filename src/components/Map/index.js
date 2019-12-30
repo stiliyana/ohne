@@ -90,6 +90,7 @@ class _Map extends Component {
           height="100%"
           onViewportChange={this._updateViewport}
           onClick={this._removePopup}
+          touchZoom={false}
         >
           <NavigationControl
             className={classes.controls}

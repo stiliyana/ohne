@@ -13,13 +13,17 @@ import ButtonCard from '../ButtonCard'
 import styles from './styles'
 import contactIcon from './assets/contact.svg'
 import suggestIcon from './assets/suggest.svg'
+import hideIcon from './assets/hide.svg'
 
 const _Contact = ({ classes }) => {
   const [showContactForm, setShowContactForm] = useState(false)
   const [showSuggestForm, setShowSuggestForm] = useState(false)
 
   const renderHideButton = onClick => (
-    <button className={classes.hide} onClick={onClick}>hide</button>
+    <button className={classes.hide} onClick={onClick}>
+      hide
+      <img alt="hide" src={hideIcon} />
+    </button>
   )
 
   const buttonContainerClassName = classNames(classes.buttonsContainer, {
@@ -55,8 +59,10 @@ const _Contact = ({ classes }) => {
         timeout={300}
       >
         <div className={classes.slideInContainer}>
-          {renderHideButton(() => setShowSuggestForm(false))}
-          <Headline margin={{ bottom: 50 }} size="default" color="brand">Have your say</Headline>
+          <div className={classes.titleContainer}>
+            <Headline className={classes.title} size="default" color="brand">Have your say</Headline>
+            {renderHideButton(() => setShowSuggestForm(false))}
+          </div>
           <Body margin={{ bottom: 30 }}>Don’t see your favourite gluten free location on the map? Send us your suggestions below and we’ll make sure to add them!</Body>
           <SuggestionForm />
         </div>
@@ -73,8 +79,10 @@ const _Contact = ({ classes }) => {
         timeout={300}
       >
         <div className={classes.slideInContainer}>
-          {renderHideButton(() => setShowContactForm(false))}
-          <Headline margin={{ bottom: 50 }} size="default" color="brand">Hungry for more?</Headline>
+          <div className={classes.titleContainer}>
+            <Headline className={classes.title} size="default" color="brand">Hungry for more?</Headline>
+            {renderHideButton(() => setShowContactForm(false))}
+          </div>
           <Body margin={{ bottom: 30 }}>Drop us a line below if you feel like chatting about how we can make Berlin a more gluten free motherf*cking friendly place.</Body>
           <ContactForm />
         </div>

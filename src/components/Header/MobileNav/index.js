@@ -49,7 +49,6 @@ _MobileNav.propTypes = {
   selectedVenueType: PropTypes.string,
   onFilterClear: PropTypes.func.isRequired,
   onCheckboxSelect: PropTypes.func.isRequired,
-  isFilterOpen: PropTypes.bool.isRequired,
 }
 
 const MobileNav = injectSheet(styles)(_MobileNav)

@@ -8,7 +8,8 @@ export default {
     minHeight: '600px',
     [`@media(max-width: ${max}px)`]: {
       marginTop: 94,
-      minHeight: 500
+      minHeight: 500,
+      maxHeight: 'calc(100vh - 154px)'
     },
     [`@media(min-width: ${min}px)`]: {
       marginTop: 85
@@ -26,10 +27,7 @@ export default {
     boxShadow: 'none !important',
     borderRadius: 0,
     height: 35,
-    '& .mapboxgl-ctrl-bottom-left': {
-      left: 'unset',
-      right: 0
-    },
+    zIndex: 2,
     '& > button': {
       width: '35px !important',
       height: '35px !important',
@@ -75,7 +73,6 @@ export default {
       borderRadius: 16,
       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.5)',
       padding: 30,
-      borderTopLeftRadius: '16px !important',
       '& > button': {
         display: 'none'
       }

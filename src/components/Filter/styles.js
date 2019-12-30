@@ -15,7 +15,8 @@ export default {
       zIndex: 999,
       padding: '16px 30px 30px',
       boxSizing: 'border-box',
-      minWidth: 280
+      minWidth: 280,
+      cursor: 'default'
     }
   },
   checkboxContainer: {
@@ -41,10 +42,10 @@ export default {
       outline: 'none'
     },
     '&:checked': {
-      backgroundColor: colors.wafer
+      background: 'radial-gradient(circle at center, #dcd0c0 0%, #dcd0c0 50%, white 50%, white 100%)'
     },
     '&::selection': {
-      backgroundColor: colors.wafer
+      background: 'radial-gradient(circle at center, #dcd0c0 0%, #dcd0c0 50%, white 50%, white 100%)'
     }
   },
   label: {

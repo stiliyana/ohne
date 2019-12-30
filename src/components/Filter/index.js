@@ -9,12 +9,10 @@ import styles from './styles'
 import clearIcon from './assets/clear.svg'
 
 const types = [
-  "bakery",
   "bar",
   "cafe",
   "restaurant",
-  "pizza",
-  "ice cream"
+  "pizza"
 ]
 
 const _Filter = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear }) => (
