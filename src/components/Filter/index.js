@@ -12,7 +12,8 @@ const types = [
   "bar",
   "cafe",
   "restaurant",
-  "pizza"
+  "pizza",
+  "bakery"
 ]
 
 const _Filter = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear }) => (

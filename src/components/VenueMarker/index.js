@@ -6,10 +6,12 @@ import bar from './assets/bar.svg'
 import restaurant from './assets/restaurant.svg'
 import pizza from './assets/pizza.svg'
 import cafe from './assets/cafe.svg'
+import bakery from './assets/bakery.svg'
 
 const VenueMarker = ({ info, index, onClick, classes }) => {
   const icons = {
     'cafe': cafe,
+    'bakery': bakery,
     'bar': bar,
     'restaurant': restaurant,
     'pizza': pizza
