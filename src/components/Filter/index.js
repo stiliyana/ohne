@@ -39,7 +39,7 @@ const _Filter = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear }
     </div>
     <div className={classes.clearContainer} onClick={onFilterClear} role="button">
       <img src={clearIcon} className={classes.clearIcon} alt="clear all" />
-      <Body size="small" component="span" color="light">Clear filters</Body>
+      <Body size="small" component="span" color="light">clear filters</Body>
     </div>
   </div>
 )

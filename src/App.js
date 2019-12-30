@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Layout from "./components/Layout"
 import Header from "./components/Header"
 import About from "./components/About"
+import GlutenScale from "./components/GlutenScale"
 import Footer from "./components/Footer"
 import Contact from "./components/Contact"
 import Map from "./components/Map"
@@ -78,7 +79,8 @@ class App extends Component {
           onFilterToggle={this._handleFilterToggle}
           onFilterClear={this._handleFilterClear}
         />
-        <Map venues={this.state.filteredVenues} />
+        <Map venues={this.state.filteredVenues} selectedVenueType={this.state.selectedVenueType} />
+        <GlutenScale />
         <About />
         <Contact />
         <Footer />

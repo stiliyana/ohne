@@ -13,7 +13,9 @@ export default {
       borderRadius: 16,
       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.5)',
       zIndex: 999,
-      padding: '16px 30px 30px'
+      padding: '16px 30px 30px',
+      boxSizing: 'border-box',
+      minWidth: 280
     }
   },
   checkboxContainer: {

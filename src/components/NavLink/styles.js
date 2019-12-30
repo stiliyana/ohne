@@ -4,7 +4,7 @@ import { min, max } from '../../utils/breakpoints'
 export default {
   root: {
     fontFamily: 'brandon-grotesque, sans-serif',
-    fontWeight: 'bold',
+    fontWeight: 500,
     color: colors.lightGray,
     textDecoration: 'none',
     '&::selection': {
@@ -16,7 +16,6 @@ export default {
     [`@media(max-width: ${max}px)`]: {
       fontSize: 16,
       lineHeight: .88,
-      textTransform: 'uppercase',
       marginBottom: 30
     },
     [`@media(min-width: ${min}px)`]: {

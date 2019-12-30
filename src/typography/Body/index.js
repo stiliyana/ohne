@@ -4,10 +4,11 @@ import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import styles from './styles'
 
-const _Body = ({ children, className, size, color, classes }) => {
+const _Body = ({ children, className, size, color, uppercase, classes }) => {
   const bodyClassName = classNames(className, classes.root, {
     [classes[`color--${color}`]]: true,
-    [classes[`size--${size}`]]: true
+    [classes[`size--${size}`]]: true,
+    [classes.uppercase]: uppercase
   })
 
   return (
@@ -21,7 +22,8 @@ _Body.defaultProps = {
   size: "default",
   color: "default",
   margin: 0,
-  className: null
+  className: null,
+  uppercase: false
 }
 
 _Body.propTypes = {
@@ -38,7 +40,8 @@ _Body.propTypes = {
       right: PropTypes.number,
       top: PropTypes.number
     })
-  ])
+  ]),
+  uppercase: PropTypes.bool
 }
 
 

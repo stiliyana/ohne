@@ -19,6 +19,14 @@ class _Map extends Component {
     popupInfo: null
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.venues !== this.props.venues) {
+      this.setState({
+        popupInfo: null
+      })
+    }
+  }
+
   _updateViewport = viewport => {
     this.setState({ viewport })
   }
@@ -45,9 +53,10 @@ class _Map extends Component {
   }
 
   _renderPopup() {
-    const {popupInfo} = this.state;
+    const { popupInfo } = this.state
+    const { selectedVenueType } = this.props
 
-    return popupInfo && (
+    return popupInfo && (!selectedVenueType || popupInfo.type === selectedVenueType) && (
       <Popup
         className={this.props.classes.popup}
         anchor="top"
@@ -97,6 +106,7 @@ class _Map extends Component {
 
 _Map.propTypes = {
   classes: PropTypes.object.isRequired,
+  selectedVenueType: PropTypes.string,
   venues: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 

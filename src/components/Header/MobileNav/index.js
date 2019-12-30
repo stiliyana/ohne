@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group'
 import IconButton from '../../IconButton'
 import NavLink from '../../NavLink'
 import Filter from '../../Filter'
-import icon from '../assets/filter-icon.svg'
+import icon from '../assets/arrow.svg'
 import styles from './styles'
 
 const _MobileNav = ({ classes, show, onHide, onFilterClear, selectedVenueType, onCheckboxSelect }) => (

@@ -5,3 +5,7 @@ body {
 * {
   user-select: text;
 }
+*::selection {
+  background-color: #dcd0c0
+}
+

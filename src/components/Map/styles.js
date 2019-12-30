@@ -26,6 +26,10 @@ export default {
     boxShadow: 'none !important',
     borderRadius: 0,
     height: 35,
+    '& .mapboxgl-ctrl-bottom-left': {
+      left: 'unset',
+      right: 0
+    },
     '& > button': {
       width: '35px !important',
       height: '35px !important',
@@ -66,6 +70,7 @@ export default {
   },
   popup: {
     width: 340,
+    cursor: 'default',
     '& > .mapboxgl-popup-content': {
       borderRadius: 16,
       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.5)',

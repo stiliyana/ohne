@@ -9,7 +9,7 @@ import Filter from '../Filter'
 import DisplayOnlyWhen from '../DisplayOnlyWhen'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
-import icon from './assets/filter-icon.svg'
+import hamburger from './assets/hamburger.svg'
 import styles from './styles'
 
 const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, isFilterOpen, onFilterToggle }) => {
@@ -43,7 +43,7 @@ const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, 
         </DisplayOnlyWhen>
         <div className={classes.hamburger}>
           <IconButton onClick={() => setShowMobileNav(true)}>
-            <img src={icon} alt="filter" />
+            <img src={hamburger} alt="filter" />
           </IconButton>
         </div>
         <div className={classes.brandContainer}>

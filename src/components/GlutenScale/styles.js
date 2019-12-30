@@ -3,7 +3,7 @@ import { min, max } from '../../utils/breakpoints'
 
 export default {
   root: {
-    padding: '60px 0',
+    padding: '60px 0 0',
     maxWidth: 800,
     left: 0,
     right: 0,
@@ -21,7 +21,7 @@ export default {
       marginBottom: 25
     },
     [`@media(min-width: ${min}px)`]: {
-      marginBottom: 12
+      marginBottom: 50
     },
   },
   body: {
@@ -31,11 +31,5 @@ export default {
     [`@media(min-width: ${min}px)`]: {
       marginBottom: 40
     },
-  },
-  divider: {
-    width: 17,
-    height: 4,
-    backgroundColor: colors.wafer,
-    margin: '10px auto 30px'
   }
 }

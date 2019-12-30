@@ -36,7 +36,7 @@ export default {
     }
   },
   'size--default': {
-    fontSize: 24,
+    fontSize: 16,
     [`@media(max-width: ${max}px)`]: {
       fontSize: 16
     }
@@ -46,5 +46,9 @@ export default {
     [`@media(max-width: ${max}px)`]: {
       fontSize: 16
     }
+  },
+  'uppercase': {
+    textTransform: 'uppercase',
+    fontWeight: 'bold'
   }
 }

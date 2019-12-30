@@ -5,7 +5,8 @@ import injectSheet from 'react-jss'
 import Body from '../../typography/Body'
 import Headline from '../../typography/Headline'
 import NavLink from '../NavLink'
-import icon from './assets/instagram-icon.svg'
+import instagram from './assets/instagram-icon.svg'
+import email from './assets/email-icon.svg'
 import styles from './styles'
 
 const _Footer = ({ classes }) => (
@@ -21,11 +22,11 @@ const _Footer = ({ classes }) => (
         <NavLink href="#contact">contact</NavLink>
       </div>
       <div className={classes.socialContainer}>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src={icon} alt="instagram" />
+        <a href="mailto:emmeline@email.com" target="_blank" rel="noopener noreferrer">
+          <img src={email} alt="email" />
         </a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src={icon} alt="instagram" />
+          <img src={instagram} alt="instagram" />
         </a>
       </div>
     </div>

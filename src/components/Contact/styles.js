@@ -11,7 +11,7 @@ export default {
     textAlign: 'center',
     position: 'relative',
     [`@media(max-width: ${max}px)`]: {
-      padding: '52px 28px',
+      padding: '0 28px 52px',
       maxWidth: 'auto'
     }
   },
@@ -19,8 +19,8 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    [`@media(max-width: ${max}px)`]: {
+    justifyContent: 'space-evenly',
+    [`@media(max-width: 620px)`]: {
       flexDirection: 'column'
     }
   },
@@ -43,11 +43,11 @@ export default {
   slideInContainer: {
     position: 'relative',
     backgroundColor: 'white',
-    [`@media(max-width: ${max}px)`]: {
-      marginTop: -400
+    [`@media(max-width: 620px)`]: {
+      marginTop: -600
     },
-    [`@media(min-width: ${min}px)`]: {
-      marginTop: -200
+    [`@media(min-width: 621px)`]: {
+      marginTop: -300
     }
   },
   hide: {
@@ -69,6 +69,8 @@ export default {
     '&:focus': {
       outline: 'none'
     }
-
+  },
+  buttonsContainerHidden: {
+    visibility: 'hidden'
   }
 }
