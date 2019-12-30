@@ -89,7 +89,6 @@ class _Map extends Component {
           height="100%"
           onViewportChange={this._updateViewport}
           onClick={this._removePopup}
-          dragPan={false}
           touchAction="pan-y"
         >
           <NavigationControl
