@@ -2,7 +2,7 @@
   "name": "ohne-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://stiliyana.github.io/ohne",
+  "homepage": "https://ohnemap.netlify.com/",
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.9.0",
