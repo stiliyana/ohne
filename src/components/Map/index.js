@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
-import ReactMapGL, { Popup, NavigationControl } from 'react-map-gl'
+import ReactMapGL, { Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl'
 import VenueInfo from '../VenueInfo'
 import VenueMarker from '../VenueMarker'
 
@@ -28,16 +28,28 @@ class _Map extends Component {
   }
 
   _updateViewport = viewport => {
-    this.setState({ viewport })
+    this.setState({
+      viewport: {
+        ...viewport,
+        transitionDuration: 0
+      }
+    })
   }
 
   _setPopupInfo = venue => {
     if (this.state.popupInfo !== null && this.state.popupInfo.name === venue.name) {
       this.setState({ popupInfo: null })
     } else {
-      this.setState({
-        popupInfo: venue
-      })
+      this.setState(prevState => ({
+        popupInfo: venue,
+        viewport: {
+          ...prevState.viewport,
+          latitude: venue.latitude,
+          longitude: venue.longitude,
+          transitionDuration: 200,
+          transitionInterpolator: new FlyToInterpolator()
+        }
+      }))
     }
   }
 
@@ -59,14 +71,15 @@ class _Map extends Component {
     return popupInfo && (!selectedVenueType || popupInfo.type === selectedVenueType) && (
       <Popup
         className={this.props.classes.popup}
-        anchor="top"
+        anchor="right"
+        dynamicPosition={false}
         offsetTop={10}
         offsetLeft={10}
         longitude={popupInfo.longitude}
         latitude={popupInfo.latitude}
         closeOnClick={true}
       >
-        <VenueInfo info={popupInfo} />
+        <VenueInfo info={popupInfo} onClose={this._removePopup} />
       </Popup>
     );
   }

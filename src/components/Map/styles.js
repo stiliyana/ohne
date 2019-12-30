@@ -9,7 +9,7 @@ export default {
     [`@media(max-width: ${max}px)`]: {
       marginTop: 94,
       minHeight: 500,
-      maxHeight: 'calc(100vh - 154px)'
+      maxHeight: 'calc(100vh - 163px)'
     },
     [`@media(min-width: ${min}px)`]: {
       marginTop: 85
@@ -67,15 +67,35 @@ export default {
     }
   },
   popup: {
-    width: 340,
-    cursor: 'default',
+    [`@media(max-width: ${max}px)`]: {
+      width: '80%',
+      maxWidth: 380,
+      height: 'auto',
+      top: '30px !important',
+      left: '0 !important',
+      bottom: 'unset !important',
+      transform: 'none !important',
+      zIndex: 9,
+      '& > .mapboxgl-popup-tip': {
+        borderWidth: '0 !important'
+      },
+      '& > .mapboxgl-popup-content': {
+        borderRadius: '0 !important',
+        borderTopRightRadius: '16px !important',
+        borderBottomRightRadius: '16px !important'
+      }
+    },
+    [`@media(min-width: ${min}px)`]: {
+      width: 340,
+      cursor: 'default',
+    },
     '& > .mapboxgl-popup-content': {
       borderRadius: 16,
       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.5)',
       padding: 30,
-      '& > button': {
+      '& > .mapboxgl-popup-close-button': {
         display: 'none'
       }
-    },
+    }
   }
 }

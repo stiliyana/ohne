@@ -1,4 +1,3 @@
-import colors from '../../utils/colors'
 import { max } from '../../utils/breakpoints'
 
 export default {
@@ -44,7 +43,7 @@ export default {
     position: 'relative',
     backgroundColor: 'white',
     [`@media(max-width: 620px)`]: {
-      marginTop: -600
+      marginTop: -620
     },
     [`@media(min-width: 621px)`]: {
       marginTop: -300
@@ -69,37 +68,6 @@ export default {
     },
     [`@media(min-width: 621px)`]: {
       gridColumnStart: 2
-    }
-  },
-  hide: {
-    cursor: 'pointer',
-    '-webkit-appearance': 'none',
-    backgroundColor: 'unset',
-    border: 'none',
-    fontFamily: 'brandon-grotesque, sans-serif',
-    fontWeight: 'bold',
-    fontStyle: 'normal',
-    fontStretch: 'normal',
-    lineHeight: 'normal',
-    letterSpacing: 'normal',
-    fontSize: 24,
-    color: colors.wafer,
-    height: 40,
-    display: 'flex',
-    alignItems: 'center',
-    '&:focus': {
-      outline: 'none'
-    },
-    '& > img': {
-      marginLeft: 16,
-      height: 24
-    },
-    [`@media(max-width: 620px)`]: {
-      fontSize: 16,
-      marginBottom: 50,
-      '& > img': {
-        height: 16
-      }
     }
   },
   buttonsContainerHidden: {

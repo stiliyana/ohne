@@ -1,9 +1,12 @@
 import React from "react"
 import PropTypes from 'prop-types'
 
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Headline from '../../typography/Headline'
 import Body from '../../typography/Body'
 import Link from '../../typography/Link'
+import DisplayOnlyWhen from '../DisplayOnlyWhen'
+import HideButton from '../HideButton'
 import injectSheet from 'react-jss'
 import styles from './styles'
 
@@ -14,11 +17,18 @@ const getScaleString = scale => {
   return '2 - Gluten Friendly'
 }
 
-const _VenueInfo = ({ info, classes }) =>
+const _VenueInfo = ({ info, classes, onClose }) =>
   <div className={classes.root}>
-    <Headline size="small" margin={{ bottom: 15 }} color="brand">{info.name}</Headline>
+    <div className={classes.titleContainer}>
+      <DisplayOnlyWhen device="mobile">
+        <HideButton onClick={onClose} />
+      </DisplayOnlyWhen>
+      <Headline size="small" color="brand">{info.name}</Headline>
+    </div>
     {info.scale && (
-      <Body size="small" margin={{ bottom: 20 }} color="light">{getScaleString(info.scale)}</Body>
+      <AnchorLink style={{ color: 'inherit', textDecoration: 'none' }} offset='85' href="#gluten-scale">
+        <Body size="small" margin={{ bottom: 20 }} color="light">{getScaleString(info.scale)}</Body>
+      </AnchorLink>
     )}
     {
       info.description && (
@@ -42,6 +52,7 @@ const _VenueInfo = ({ info, classes }) =>
 
 _VenueInfo.propTypes = {
   classes: PropTypes.object.isRequired,
+  onClose: PropTypes.func.isRequired,
   info: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
