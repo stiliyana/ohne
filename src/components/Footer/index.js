@@ -22,10 +22,10 @@ const _Footer = ({ classes }) => (
         <NavLink href="#contact">contact</NavLink>
       </div>
       <div className={classes.socialContainer}>
-        <a href="mailto:emmeline@email.com" target="_blank" rel="noopener noreferrer">
+        <a href="mailto:hello@ohnemap.com" target="_blank" rel="noopener noreferrer">
           <img src={email} alt="email" />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/ohnemap/" target="_blank" rel="noopener noreferrer">
           <img src={instagram} alt="instagram" />
         </a>
       </div>
