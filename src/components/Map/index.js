@@ -65,7 +65,6 @@ class _Map extends Component {
         longitude={popupInfo.longitude}
         latitude={popupInfo.latitude}
         closeOnClick={true}
-        tipSize={20}
       >
         <VenueInfo info={popupInfo} />
       </Popup>
@@ -90,7 +89,8 @@ class _Map extends Component {
           height="100%"
           onViewportChange={this._updateViewport}
           onClick={this._removePopup}
-          touchZoom={false}
+          dragPan={false}
+          touchAction="pan-y"
         >
           <NavigationControl
             className={classes.controls}
