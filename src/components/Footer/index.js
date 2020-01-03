@@ -25,7 +25,7 @@ const _Footer = ({ classes }) => (
         <a href="mailto:hello@ohnemap.com" target="_blank" rel="noopener noreferrer">
           <img src={email} alt="email" />
         </a>
-        <a href="https://www.instagram.com/ohnemap/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/ohne_gluten/" target="_blank" rel="noopener noreferrer">
           <img src={instagram} alt="instagram" />
         </a>
       </div>
