@@ -7,6 +7,7 @@ import restaurant from './assets/restaurant.svg'
 import pizza from './assets/pizza.svg'
 import cafe from './assets/cafe.svg'
 import bakery from './assets/bakery.svg'
+import icecream from './assets/ice-cream.svg'
 
 const VenueMarker = ({
   info, index, onClick
@@ -16,7 +17,8 @@ const VenueMarker = ({
     bakery,
     bar,
     restaurant,
-    pizza
+    pizza,
+    icecream
   }
 
   return (
@@ -25,7 +27,7 @@ const VenueMarker = ({
       longitude={info.longitude}
       latitude={info.latitude}
     >
-      <img src={icons[info.type]} alt={info.type} onClick={onClick} onKeyPress={onClick} role="presentation" />
+      <img src={icons[info.type.replace('-', '')]} alt={info.type} onClick={onClick} onKeyPress={onClick} role="presentation" />
     </Marker>
   )
 }
