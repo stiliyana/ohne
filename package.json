@@ -5,6 +5,7 @@
   "homepage": "https://ohnemap.netlify.com/",
   "dependencies": {
     "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.9.0",
@@ -23,9 +24,6 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,6 +37,11 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0",
     "gh-pages": "^2.1.1"
   }
 }

@@ -15,7 +15,7 @@ export default {
     },
     [`@media(max-width: ${max}px)`]: {
       fontSize: 16,
-      lineHeight: .88,
+      lineHeight: 0.88,
       marginBottom: 30
     },
     [`@media(min-width: ${min}px)`]: {

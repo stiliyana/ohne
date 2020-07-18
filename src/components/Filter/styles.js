@@ -1,4 +1,4 @@
-import bodyStyles from '../../typography/Body/styles.js'
+import bodyStyles from '../../typography/Body/styles'
 import colors from '../../utils/colors'
 import { min, max } from '../../utils/breakpoints'
 

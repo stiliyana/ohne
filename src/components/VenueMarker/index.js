@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Marker } from 'react-map-gl'
 
@@ -8,13 +8,15 @@ import pizza from './assets/pizza.svg'
 import cafe from './assets/cafe.svg'
 import bakery from './assets/bakery.svg'
 
-const VenueMarker = ({ info, index, onClick, classes }) => {
+const VenueMarker = ({
+  info, index, onClick
+}) => {
   const icons = {
-    'cafe': cafe,
-    'bakery': bakery,
-    'bar': bar,
-    'restaurant': restaurant,
-    'pizza': pizza
+    cafe,
+    bakery,
+    bar,
+    restaurant,
+    pizza
   }
 
   return (
@@ -23,7 +25,7 @@ const VenueMarker = ({ info, index, onClick, classes }) => {
       longitude={info.longitude}
       latitude={info.latitude}
     >
-      <img src={icons[info.type]} alt={info.type} onClick={onClick} />
+      <img src={icons[info.type]} alt={info.type} onClick={onClick} onKeyPress={onClick} role="presentation" />
     </Marker>
   )
 }
@@ -37,6 +39,5 @@ VenueMarker.propTypes = {
   }).isRequired,
   onClick: PropTypes.func.isRequired
 }
-
 
 export default VenueMarker

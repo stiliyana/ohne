@@ -21,7 +21,7 @@ export default {
     },
     [`@media(min-width: ${min}px)`]: {
       marginBottom: 50
-    },
+    }
   },
   body: {
     [`@media(max-width: ${max}px)`]: {
@@ -29,6 +29,6 @@ export default {
     },
     [`@media(min-width: ${min}px)`]: {
       marginBottom: 40
-    },
+    }
   }
 }

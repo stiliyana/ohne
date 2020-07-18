@@ -30,7 +30,7 @@ export default {
       padding: 25
     },
     [`@media(min-width: ${min}px)`]: {
-      padding: '26px 25px 0 43px',
+      padding: '26px 25px 0 43px'
     }
   },
   brandContainer: {

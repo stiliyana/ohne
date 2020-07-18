@@ -16,7 +16,7 @@ export default {
       height: 94
     },
     [`@media(min-width: ${min}px)`]: {
-      height: 85,
+      height: 85
     }
   },
   filter: {
@@ -55,7 +55,7 @@ export default {
     extend: 'flexContainer',
     justifyContent: 'flex-start',
     [`@media(max-width: ${max}px)`]: {
-      flexDirection: 'column',
+      flexDirection: 'column'
     },
     [`@media(min-width: ${min}px)`]: {
       '& > h1': {

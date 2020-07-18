@@ -39,7 +39,7 @@ export default {
         borderRadius: '0 !important'
       },
       '& > span': {
-        backgroundImage: 'none !important',
+        backgroundImage: 'none !important'
       },
       '&:after': {
         content: '""',
@@ -49,7 +49,7 @@ export default {
         left: '25%',
         top: '50%',
         transform: 'translateY(-50%)',
-        backgroundColor: colors.lightGray,
+        backgroundColor: colors.lightGray
       },
       '&:first-child': {
         '&:before': {
@@ -60,7 +60,7 @@ export default {
           top: '25%',
           left: '50%',
           transform: 'translateX(-50%)',
-          backgroundColor: colors.lightGray,
+          backgroundColor: colors.lightGray
         }
       },
       '&:last-child': {
@@ -89,7 +89,7 @@ export default {
     },
     [`@media(min-width: ${min}px)`]: {
       width: 340,
-      cursor: 'default',
+      cursor: 'default'
     },
     '& > .mapboxgl-popup-content': {
       borderRadius: 16,

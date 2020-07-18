@@ -53,7 +53,7 @@ export default {
       fontSize: 14
     }
   },
-  'uppercase': {
+  uppercase: {
     textTransform: 'uppercase',
     fontWeight: 'bold'
   }

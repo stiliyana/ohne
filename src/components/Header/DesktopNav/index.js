@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 
@@ -8,7 +8,7 @@ import icon from '../assets/filter-icon.svg'
 import styles from './styles'
 
 const _DesktopNav = ({ classes, onFilterToggle }) => (
-  <React.Fragment>
+  <>
     <div className={classes.linksContainer}>
       <NavLink href="#map">map</NavLink>
       <NavLink href="#about">about us</NavLink>
@@ -19,7 +19,7 @@ const _DesktopNav = ({ classes, onFilterToggle }) => (
         <img src={icon} alt="filter" />
       </IconButton>
     </div>
-  </React.Fragment>
+  </>
 )
 
 _DesktopNav.propTypes = {

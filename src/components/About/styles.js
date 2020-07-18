@@ -22,7 +22,7 @@ export default {
     },
     [`@media(min-width: ${min}px)`]: {
       marginBottom: 12
-    },
+    }
   },
   body: {
     [`@media(max-width: ${max}px)`]: {
@@ -30,7 +30,7 @@ export default {
     },
     [`@media(min-width: ${min}px)`]: {
       marginBottom: 40
-    },
+    }
   },
   divider: {
     width: 17,

@@ -27,5 +27,5 @@ export default {
     [`@media(max-width: ${max}px)`]: {
       display: 'none'
     }
-  },
+  }
 }

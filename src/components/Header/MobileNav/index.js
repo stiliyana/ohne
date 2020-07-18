@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 import { CSSTransition } from 'react-transition-group'
@@ -9,7 +9,15 @@ import Filter from '../../Filter'
 import icon from '../assets/arrow.svg'
 import styles from './styles'
 
-const _MobileNav = ({ classes, show, onHide, onFilterClear, selectedVenueType, onTypeCheckboxSelect, onScaleCheckboxSelect }) => (
+const _MobileNav = ({
+  classes,
+  show,
+  onHide,
+  onFilterClear,
+  selectedVenueType,
+  onTypeCheckboxSelect,
+  onScaleCheckboxSelect
+}) => (
   <CSSTransition
     in={show}
     classNames={{
@@ -46,6 +54,8 @@ _MobileNav.defaultProps = {
 }
 
 _MobileNav.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onHide: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
   selectedVenueType: PropTypes.string,
   onFilterClear: PropTypes.func.isRequired,

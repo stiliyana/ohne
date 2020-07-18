@@ -1,14 +1,14 @@
-import React, { Component } from "react"
-import Layout from "./components/Layout"
-import Header from "./components/Header"
-import About from "./components/About"
-import GlutenScale from "./components/GlutenScale"
-import Footer from "./components/Footer"
-import Contact from "./components/Contact"
-import Map from "./components/Map"
+import React, { Component } from 'react'
 import Tabletop from 'tabletop'
+import Layout from './components/Layout'
+import Header from './components/Header'
+import About from './components/About'
+import GlutenScale from './components/GlutenScale'
+import Footer from './components/Footer'
+import Contact from './components/Contact'
+import Map from './components/Map'
 
-class App extends Component {
+export default class App extends Component {
   state = {
     selectedVenueType: null,
     filteredVenues: [],
@@ -30,10 +30,10 @@ class App extends Component {
     Tabletop.init({
       key: process.env.REACT_APP_SHEETS_KEY,
       simpleSheet: true,
-      callback: (data, tabletop) => {
+      callback: data => {
         const mappedVenues = data.map(venue => (
-          { ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude)}
-        )).filter(venue => venue.description !== "")
+          { ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude) }
+        )).filter(venue => venue.description !== '')
         this.setState({
           filteredVenues: mappedVenues
         })
@@ -42,32 +42,31 @@ class App extends Component {
     })
   }
 
-  _handleScroll = event => {
+  _handleScroll = () => {
     if (window.scrollY > window.innerHeight) {
       this.setState({
         isFilterOpen: false
       })
     }
-
   }
 
   _handleFilterToggle = () => {
-    this.setState({
-      isFilterOpen: !this.state.isFilterOpen
-    })
+    this.setState(prevState => ({
+      isFilterOpen: !prevState.isFilterOpen
+    }))
   }
 
-  _handleSelectVenueType = (event) => {
+  _handleSelectVenueType = event => {
     this.setState({
       selectedVenueType: event.target.value,
       filteredVenues: this.venues.filter(v => v.type === event.target.value)
     })
   }
 
-  _handleSelectVenueScale = (event) => {
+  _handleSelectVenueScale = event => {
     const scaleMap = {
-      "coeliac-dedicated": "1",
-      "gluten-friendly": "2"
+      'coeliac-dedicated': '1',
+      'gluten-friendly': '2'
     }
     this.setState({
       selectedVenueType: event.target.value,
@@ -102,5 +101,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

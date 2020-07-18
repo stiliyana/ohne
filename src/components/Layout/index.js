@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 
@@ -16,7 +16,6 @@ _Layout.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired
 }
-
 
 const Layout = injectSheet(styles)(_Layout)
 export default Layout

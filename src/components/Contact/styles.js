@@ -19,7 +19,7 @@ export default {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    [`@media(max-width: 620px)`]: {
+    '@media(max-width: 620px)': {
       flexDirection: 'column'
     }
   },
@@ -42,31 +42,31 @@ export default {
   slideInContainer: {
     position: 'relative',
     backgroundColor: 'white',
-    [`@media(max-width: 620px)`]: {
+    '@media(max-width: 620px)': {
       marginTop: -620
     },
-    [`@media(min-width: 621px)`]: {
+    '@media(min-width: 621px)': {
       marginTop: -300
     }
   },
   titleContainer: {
     marginBottom: 50,
-    [`@media(max-width: 620px)`]: {
+    '@media(max-width: 620px)': {
       display: 'flex',
       flexDirection: 'column-reverse',
       alignItems: 'flex-end'
     },
-    [`@media(min-width: 621px)`]: {
+    '@media(min-width: 621px)': {
       display: 'grid',
       gridTemplateColumns: '1fr 7fr 1fr',
-      justifyItems: 'center',
+      justifyItems: 'center'
     }
   },
   title: {
-    [`@media(max-width: 620px)`]: {
+    '@media(max-width: 620px)': {
       alignSelf: 'center'
     },
-    [`@media(min-width: 621px)`]: {
+    '@media(min-width: 621px)': {
       gridColumnStart: 2
     }
   },

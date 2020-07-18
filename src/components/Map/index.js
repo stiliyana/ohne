@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 import ReactMapGL, { Popup, NavigationControl } from 'react-map-gl'
@@ -21,9 +21,7 @@ class _Map extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.venues !== this.props.venues) {
-      this.setState({
-        popupInfo: null
-      })
+      this._removePopup()
     }
   }
 
@@ -36,39 +34,44 @@ class _Map extends Component {
     })
   }
 
+  _removePopup = () => {
+    this.setState({ popupInfo: null })
+  }
+
   _setPopupInfo = venue => {
     if (this.state.popupInfo !== null && this.state.popupInfo.name === venue.name) {
       this.setState({ popupInfo: null })
     } else {
-      this.setState(prevState => ({
+      this.setState(() => ({
         popupInfo: venue
       }))
     }
   }
 
-  _renderVenueMarker = (venue, index) => {
-    return (
-      <VenueMarker
-        key={index}
-        info={venue}
-        index={index}
-        onClick={() => this._setPopupInfo(venue)}
-      />
-    );
-  }
+  _renderVenueMarker = (venue, index) => (
+    <VenueMarker
+      key={index}
+      info={venue}
+      index={index}
+      onClick={() => this._setPopupInfo(venue)}
+    />
+  )
 
   _renderPopup() {
     const { popupInfo } = this.state
     const { selectedVenueType } = this.props
     const scaleMap = {
-      "coeliac-dedicated": "1",
-      "gluten-friendly": "2"
+      'coeliac-dedicated': '1',
+      'gluten-friendly': '2'
     }
-    console.log(popupInfo)
-    console.log(selectedVenueType)
-    return popupInfo && (!selectedVenueType || popupInfo.type === selectedVenueType ||
-      popupInfo.scale === scaleMap[selectedVenueType]
-      ) && (
+
+    return (
+      popupInfo && (
+        !selectedVenueType
+        || popupInfo.type === selectedVenueType
+        || popupInfo.scale === scaleMap[selectedVenueType]
+      )
+    ) && (
       <Popup
         className={this.props.classes.popup}
         anchor="right"
@@ -80,11 +83,7 @@ class _Map extends Component {
       >
         <VenueInfo info={popupInfo} onClose={this._removePopup} />
       </Popup>
-    );
-  }
-
-  _removePopup = () => {
-    this.setState({ popupInfo: null })
+    )
   }
 
   render() {
@@ -112,8 +111,12 @@ class _Map extends Component {
           { this._renderPopup() }
         </ReactMapGL>
       </div>
-    );
+    )
   }
+}
+
+_Map.defaultProps = {
+  selectedVenueType: null
 }
 
 _Map.propTypes = {
@@ -121,7 +124,6 @@ _Map.propTypes = {
   selectedVenueType: PropTypes.string,
   venues: PropTypes.arrayOf(PropTypes.object).isRequired
 }
-
 
 const Map = injectSheet(styles)(_Map)
 export default Map

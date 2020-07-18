@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 
@@ -12,7 +12,15 @@ import DesktopNav from './DesktopNav'
 import hamburger from './assets/hamburger.svg'
 import styles from './styles'
 
-const _Header = ({ classes, selectedVenueType, onTypeCheckboxSelect, onScaleCheckboxSelect, onFilterClear, isFilterOpen, onFilterToggle }) => {
+const _Header = ({
+  classes,
+  selectedVenueType,
+  onTypeCheckboxSelect,
+  onScaleCheckboxSelect,
+  onFilterClear,
+  isFilterOpen,
+  onFilterToggle
+}) => {
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const _handleHideMobileNav = () => {
@@ -24,12 +32,12 @@ const _Header = ({ classes, selectedVenueType, onTypeCheckboxSelect, onScaleChec
     _handleHideMobileNav()
   }
 
-  const _handleMobileTypeCheckboxSelect = (e) => {
+  const _handleMobileTypeCheckboxSelect = e => {
     onTypeCheckboxSelect(e)
     _handleHideMobileNav()
   }
 
-  const _handleMobileScaleCheckboxSelect = (e) => {
+  const _handleMobileScaleCheckboxSelect = e => {
     onScaleCheckboxSelect(e)
     _handleHideMobileNav()
   }

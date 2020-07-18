@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 
@@ -36,7 +36,6 @@ const _Footer = ({ classes }) => (
 _Footer.propTypes = {
   classes: PropTypes.object.isRequired
 }
-
 
 const Footer = injectSheet(styles)(_Footer)
 export default Footer

@@ -1,13 +1,13 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import injectSheet from 'react-jss'
 import Headline from '../../typography/Headline'
 import Body from '../../typography/Body'
 import Link from '../../typography/Link'
 import DisplayOnlyWhen from '../DisplayOnlyWhen'
 import HideButton from '../HideButton'
-import injectSheet from 'react-jss'
 import styles from './styles'
 
 const getScaleString = scale => {
@@ -17,7 +17,7 @@ const getScaleString = scale => {
   return '2 - Gluten Friendly'
 }
 
-const _VenueInfo = ({ info, classes, onClose }) =>
+const _VenueInfo = ({ info, classes, onClose }) => (
   <div className={classes.root}>
     <div className={classes.titleContainer}>
       <DisplayOnlyWhen device="mobile">
@@ -26,7 +26,7 @@ const _VenueInfo = ({ info, classes, onClose }) =>
       <Headline size="small" color="brand">{info.name}</Headline>
     </div>
     {info.scale && (
-      <AnchorLink style={{ color: 'inherit', textDecoration: 'none' }} offset='85' href="#gluten-scale">
+      <AnchorLink style={{ color: 'inherit', textDecoration: 'none' }} offset="85" href="#gluten-scale">
         <Body size="small" margin={{ bottom: 20 }} color="light">{getScaleString(info.scale)}</Body>
       </AnchorLink>
     )}
@@ -49,6 +49,7 @@ const _VenueInfo = ({ info, classes, onClose }) =>
       <Link href={`tel:${info.phone}`}>{info.phone}</Link>
     )}
   </div>
+)
 
 _VenueInfo.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -59,12 +60,12 @@ _VenueInfo.propTypes = {
     address: PropTypes.string.isRequired,
     latitude: PropTypes.number.isRequired,
     longitude: PropTypes.number.isRequired,
+    scale: PropTypes.string.isRequired,
     phone: PropTypes.string,
     website: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
   }).isRequired
 }
-
 
 const VenueInfo = injectSheet(styles)(_VenueInfo)
 export default VenueInfo

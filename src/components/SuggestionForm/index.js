@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 import styles from './styles'
@@ -11,13 +11,13 @@ const SuggestionForm = ({ classes }) => (
     </div>
     <div className={classes.inputContainer}>
       <label className={classes.inputLabel} htmlFor="location">Gluten Free Location *</label>
-      <input className={classes.input} required type="text" name="gluten free location" id="location" />
+      <input className={classes.input} required={true} type="text" name="gluten free location" id="location" />
     </div>
     <div className={classes.inputContainer}>
       <label className={classes.inputLabel} htmlFor="message">Message (optional)</label>
       <textarea className={classes.textArea} type="text" name="message" id="message" />
     </div>
-    <input className={classes.submitButton} type="submit" value="okay"/>
+    <input className={classes.submitButton} type="submit" value="okay" />
   </form>
 )
 

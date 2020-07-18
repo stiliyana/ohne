@@ -24,7 +24,7 @@ export default {
       marginLeft: 16,
       height: 24
     },
-    [`@media(max-width: 620px)`]: {
+    '@media(max-width: 620px)': {
       fontSize: 16,
       marginBottom: 50,
       '& > img': {

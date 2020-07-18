@@ -1,14 +1,16 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
-import Body from '../../typography/Body'
 import injectSheet from 'react-jss'
+import Body from '../../typography/Body'
 import styles from './styles'
 
-const ButtonCard = ({ classes, iconSrc, title, description, onClick }) => (
-  <button onClick={onClick} className={classes.button}>
+const ButtonCard = ({
+  classes, iconSrc, title, description, onClick
+}) => (
+  <button onClick={onClick} className={classes.button} type="button">
     <img src={iconSrc} alt={title} />
     <Body
-      uppercase
+      uppercase={true}
       color="brand"
       margin={{ bottom: 16 }}
     >

@@ -1,13 +1,20 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import injectSheet from 'react-jss'
 import styles from './styles'
 
-const _NavLink = ({ children, href, onClick, classes }) =>
-  <AnchorLink offset='85' className={classes.root} href={href} onClick={onClick}>
+const _NavLink = ({
+  children, href, onClick, classes
+}) => (
+  <AnchorLink offset="85" className={classes.root} href={href} onClick={onClick}>
     { children }
   </AnchorLink>
+)
+
+_NavLink.defaultProps = {
+  onClick: null
+}
 
 _NavLink.propTypes = {
   href: PropTypes.string.isRequired,
@@ -15,7 +22,6 @@ _NavLink.propTypes = {
   onClick: PropTypes.func,
   classes: PropTypes.object.isRequired
 }
-
 
 const NavLink = injectSheet(styles)(_NavLink)
 export default NavLink
