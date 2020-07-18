@@ -12,7 +12,7 @@ import DesktopNav from './DesktopNav'
 import hamburger from './assets/hamburger.svg'
 import styles from './styles'
 
-const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, isFilterOpen, onFilterToggle }) => {
+const _Header = ({ classes, selectedVenueType, onTypeCheckboxSelect, onScaleCheckboxSelect, onFilterClear, isFilterOpen, onFilterToggle }) => {
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const _handleHideMobileNav = () => {
@@ -24,8 +24,13 @@ const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, 
     _handleHideMobileNav()
   }
 
-  const _handleMobileCheckboxSelect = (e) => {
-    onCheckboxSelect(e)
+  const _handleMobileTypeCheckboxSelect = (e) => {
+    onTypeCheckboxSelect(e)
+    _handleHideMobileNav()
+  }
+
+  const _handleMobileScaleCheckboxSelect = (e) => {
+    onScaleCheckboxSelect(e)
     _handleHideMobileNav()
   }
 
@@ -37,7 +42,8 @@ const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, 
             show={showMobileNav}
             onHide={_handleHideMobileNav}
             onFilterClear={_handleMobileFilterClear}
-            onCheckboxSelect={_handleMobileCheckboxSelect}
+            onTypeCheckboxSelect={_handleMobileTypeCheckboxSelect}
+            onScaleCheckboxSelect={_handleMobileScaleCheckboxSelect}
             selectedVenueType={selectedVenueType}
           />
         </DisplayOnlyWhen>
@@ -47,8 +53,8 @@ const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, 
           </IconButton>
         </div>
         <div className={classes.brandContainer}>
-          <Headline size="large">OHNE</Headline>
-          <Body className={classes.brandDescription} size="default" color="brand">a gluten free map</Body>
+          <Headline size="large" color="brand">OHNE</Headline>
+          <Body className={classes.brandDescription} size="large">a gluten free map</Body>
         </div>
         <DisplayOnlyWhen device="desktop">
           <DesktopNav onFilterToggle={onFilterToggle} />
@@ -57,7 +63,8 @@ const _Header = ({ classes, selectedVenueType, onCheckboxSelect, onFilterClear, 
               <Filter
                 onFilterClear={onFilterClear}
                 selectedVenueType={selectedVenueType}
-                onCheckboxSelect={onCheckboxSelect}
+                onTypeCheckboxSelect={onTypeCheckboxSelect}
+                onScaleCheckboxSelect={onScaleCheckboxSelect}
               />
             )
           }
@@ -75,7 +82,8 @@ _Header.propTypes = {
   classes: PropTypes.object.isRequired,
   selectedVenueType: PropTypes.string,
   onFilterClear: PropTypes.func.isRequired,
-  onCheckboxSelect: PropTypes.func.isRequired,
+  onTypeCheckboxSelect: PropTypes.func.isRequired,
+  onScaleCheckboxSelect: PropTypes.func.isRequired,
   isFilterOpen: PropTypes.bool.isRequired,
   onFilterToggle: PropTypes.func.isRequired
 }

@@ -47,6 +47,12 @@ export default {
       fontSize: 16
     }
   },
+  'size--large': {
+    fontSize: 24,
+    [`@media(max-width: ${max}px)`]: {
+      fontSize: 14
+    }
+  },
   'uppercase': {
     textTransform: 'uppercase',
     fontWeight: 'bold'

@@ -27,7 +27,7 @@ _Body.defaultProps = {
 }
 
 _Body.propTypes = {
-  size: PropTypes.oneOf(["small", "default"]),
+  size: PropTypes.oneOf(["small", "default", "large"]),
   color: PropTypes.oneOf(["default", "light", "brand"]),
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired,

@@ -9,7 +9,7 @@ import Filter from '../../Filter'
 import icon from '../assets/arrow.svg'
 import styles from './styles'
 
-const _MobileNav = ({ classes, show, onHide, onFilterClear, selectedVenueType, onCheckboxSelect }) => (
+const _MobileNav = ({ classes, show, onHide, onFilterClear, selectedVenueType, onTypeCheckboxSelect, onScaleCheckboxSelect }) => (
   <CSSTransition
     in={show}
     classNames={{
@@ -34,7 +34,8 @@ const _MobileNav = ({ classes, show, onHide, onFilterClear, selectedVenueType, o
       <Filter
         onFilterClear={onFilterClear}
         selectedVenueType={selectedVenueType}
-        onCheckboxSelect={onCheckboxSelect}
+        onTypeCheckboxSelect={onTypeCheckboxSelect}
+        onScaleCheckboxSelect={onScaleCheckboxSelect}
       />
     </div>
   </CSSTransition>
@@ -48,7 +49,8 @@ _MobileNav.propTypes = {
   classes: PropTypes.object.isRequired,
   selectedVenueType: PropTypes.string,
   onFilterClear: PropTypes.func.isRequired,
-  onCheckboxSelect: PropTypes.func.isRequired,
+  onTypeCheckboxSelect: PropTypes.func.isRequired,
+  onScaleCheckboxSelect: PropTypes.func.isRequired
 }
 
 const MobileNav = injectSheet(styles)(_MobileNav)

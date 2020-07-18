@@ -31,7 +31,9 @@ class App extends Component {
       key: process.env.REACT_APP_SHEETS_KEY,
       simpleSheet: true,
       callback: (data, tabletop) => {
-        const mappedVenues = data.map(venue => ({ ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude)}))
+        const mappedVenues = data.map(venue => (
+          { ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude)}
+        )).filter(venue => venue.description !== "")
         this.setState({
           filteredVenues: mappedVenues
         })
@@ -62,6 +64,17 @@ class App extends Component {
     })
   }
 
+  _handleSelectVenueScale = (event) => {
+    const scaleMap = {
+      "coeliac-dedicated": "1",
+      "gluten-friendly": "2"
+    }
+    this.setState({
+      selectedVenueType: event.target.value,
+      filteredVenues: this.venues.filter(v => v.scale === scaleMap[event.target.value])
+    })
+  }
+
   _handleFilterClear = () => {
     this.setState({
       selectedVenueType: null,
@@ -73,7 +86,8 @@ class App extends Component {
     return (
       <Layout>
         <Header
-          onCheckboxSelect={this._handleSelectVenueType}
+          onTypeCheckboxSelect={this._handleSelectVenueType}
+          onScaleCheckboxSelect={this._handleSelectVenueScale}
           selectedVenueType={this.state.selectedVenueType}
           isFilterOpen={this.state.isFilterOpen}
           onFilterToggle={this._handleFilterToggle}
