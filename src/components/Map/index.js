@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
-import ReactMapGL, { Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl'
+import ReactMapGL, { Popup, NavigationControl } from 'react-map-gl'
 import VenueInfo from '../VenueInfo'
 import VenueMarker from '../VenueMarker'
 
@@ -41,14 +41,7 @@ class _Map extends Component {
       this.setState({ popupInfo: null })
     } else {
       this.setState(prevState => ({
-        popupInfo: venue,
-        viewport: {
-          ...prevState.viewport,
-          latitude: venue.latitude,
-          longitude: venue.longitude,
-          transitionDuration: 200,
-          transitionInterpolator: new FlyToInterpolator()
-        }
+        popupInfo: venue
       }))
     }
   }
@@ -67,12 +60,18 @@ class _Map extends Component {
   _renderPopup() {
     const { popupInfo } = this.state
     const { selectedVenueType } = this.props
-
-    return popupInfo && (!selectedVenueType || popupInfo.type === selectedVenueType) && (
+    const scaleMap = {
+      "coeliac-dedicated": "1",
+      "gluten-friendly": "2"
+    }
+    console.log(popupInfo)
+    console.log(selectedVenueType)
+    return popupInfo && (!selectedVenueType || popupInfo.type === selectedVenueType ||
+      popupInfo.scale === scaleMap[selectedVenueType]
+      ) && (
       <Popup
         className={this.props.classes.popup}
         anchor="right"
-        dynamicPosition={false}
         offsetTop={10}
         offsetLeft={10}
         longitude={popupInfo.longitude}

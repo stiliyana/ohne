@@ -32,12 +32,14 @@ export default {
       width: '35px !important',
       height: '35px !important',
       backgroundColor: `${colors.background} !important`,
-      backgroundImage: 'none !important',
       position: 'relative',
       display: 'inline-block !important',
       '&:focus': {
         boxShadow: 'none !important',
         borderRadius: '0 !important'
+      },
+      '& > span': {
+        backgroundImage: 'none !important',
       },
       '&:after': {
         content: '""',
