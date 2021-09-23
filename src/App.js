@@ -31,7 +31,6 @@ export default class App extends Component {
       download: true,
       header: true,
       complete: ({ data }) => {
-        console.lo(data)
         const mappedVenues = data.map(venue => (
           { ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude) }
         )).filter(venue => venue.description !== '' && !!venue.type)
@@ -80,7 +79,6 @@ export default class App extends Component {
   }
 
   _setVenues(venues) {
-    console.log(venues)
     this.setState({
       filteredVenues: venues
     })
