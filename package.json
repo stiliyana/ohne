@@ -5,6 +5,7 @@
   "homepage": "https://ohnemap.netlify.com/",
   "dependencies": {
     "classnames": "^2.2.6",
+    "papaparse": "^5.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
@@ -12,8 +13,7 @@
     "react-jss": "^8.6.1",
     "react-map-gl": "^5.0.10",
     "react-scripts": "3.1.1",
-    "react-transition-group": "^4.3.0",
-    "tabletop": "^1.5.2"
+    "react-transition-group": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

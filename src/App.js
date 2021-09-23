@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tabletop from 'tabletop'
+import Papa from 'papaparse'
 import Layout from './components/Layout'
 import Header from './components/Header'
 import About from './components/About'
@@ -27,17 +27,14 @@ export default class App extends Component {
   }
 
   _getVenues = () => {
-    Tabletop.init({
-      key: process.env.REACT_APP_SHEETS_KEY,
-      simpleSheet: true,
-      callback: data => {
+    Papa.parse(process.env.REACT_APP_SHEETS_KEY, {
+      download: true,
+      header: true,
+      complete: ({ data }) => {
         const mappedVenues = data.map(venue => (
           { ...venue, latitude: Number(venue.latitude), longitude: Number(venue.longitude) }
         )).filter(venue => venue.description !== '')
-        this.setState({
-          filteredVenues: mappedVenues
-        })
-        this.venues = mappedVenues
+        this._setVenues(mappedVenues)
       }
     })
   }
@@ -79,6 +76,13 @@ export default class App extends Component {
       selectedVenueType: null,
       filteredVenues: this.venues
     })
+  }
+
+  _setVenues(venues) {
+    this.setState({
+      filteredVenues: venues
+    })
+    this.venues = venues
   }
 
   render() {
