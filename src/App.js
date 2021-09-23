@@ -79,6 +79,7 @@ export default class App extends Component {
   }
 
   _setVenues(venues) {
+    console.log(venues)
     this.setState({
       filteredVenues: venues
     })
